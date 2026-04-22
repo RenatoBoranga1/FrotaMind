@@ -1,0 +1,27 @@
+<svg width="720" height="220" viewBox="0 0 720 220" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="shieldGradient" x1="28" y1="16" x2="182" y2="190" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#102A43"/>
+      <stop offset="1" stop-color="#1F3C5B"/>
+    </linearGradient>
+  </defs>
+
+  <path d="M105 14L147.9 29.5C159.5 33.7 167 44.5 167 56.9V82.4C167 113.4 146.3 140.9 105 151.2C63.7 140.9 43 113.4 43 82.4V56.9C43 44.5 50.5 33.7 62.1 29.5L105 14Z" fill="url(#shieldGradient)"/>
+  <path d="M105 26L139.3 38.5C148.1 41.7 153.8 50.1 153.8 59.6V80.2C153.8 104 137.7 124.7 105 133.2C72.3 124.7 56.2 104 56.2 80.2V59.6C56.2 50.1 61.9 41.7 70.7 38.5L105 26Z" fill="#1FA971" fill-opacity="0.16"/>
+  <g stroke-linecap="round" stroke-linejoin="round">
+    <path d="M64 85H116.5C120.6 85 124.2 82.8 126.1 79.2L131.5 69H145C150.5 69 155 73.5 155 79V99H147.2" stroke="white" stroke-width="6"/>
+    <path d="M75 69H111" stroke="#1FA971" stroke-width="4"/>
+    <path d="M82 78H106" stroke="#1FA971" stroke-width="4"/>
+    <path d="M89 87H103" stroke="#1FA971" stroke-width="4"/>
+    <path d="M59 99H68" stroke="white" stroke-width="6"/>
+  </g>
+  <circle cx="111" cy="69" r="4.2" fill="#F28C28"/>
+  <circle cx="106" cy="78" r="4.2" fill="#F28C28"/>
+  <circle cx="82" cy="111" r="12" fill="white"/>
+  <circle cx="134" cy="111" r="12" fill="white"/>
+  <circle cx="82" cy="111" r="5.2" fill="#102A43"/>
+  <circle cx="134" cy="111" r="5.2" fill="#102A43"/>
+
+  <text x="220" y="106" fill="#102A43" font-family="Sora, Space Grotesk, Montserrat, Arial, sans-serif" font-size="64" font-weight="700">Frota<tspan fill="#1FA971">Mind</tspan></text>
+  <text x="224" y="144" fill="#5B6B7A" font-family="Manrope, Plus Jakarta Sans, Arial, sans-serif" font-size="24" font-weight="500">Operacao logistica inteligente com foco em seguranca e eficiencia</text>
+</svg>

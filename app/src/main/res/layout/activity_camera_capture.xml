@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/black">
+
+    <androidx.camera.view.PreviewView
+        android:id="@+id/previewView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:implementationMode="compatible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:scaleType="fillCenter" />
+
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/toolbar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
+        app:navigationIcon="@android:drawable/ic_media_previous"
+        app:title="@string/camera_title"
+        app:titleTextColor="@android:color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cardInstruction"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        app:cardBackgroundColor="#CC101828"
+        app:cardCornerRadius="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/toolbar">
+
+        <TextView
+            android:id="@+id/textCameraInstruction"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="16dp"
+            android:textColor="@android:color/white"
+            android:textSize="15sp" />
+    </com.google.android.material.card.MaterialCardView>
+
+    <com.google.android.material.progressindicator.CircularProgressIndicator
+        android:id="@+id/progressCamera"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:visibility="gone"
+        app:indicatorColor="@android:color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="24dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <com.google.android.material.progressindicator.CircularProgressIndicator
+            android:id="@+id/progressCapture"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginBottom="12dp"
+            android:visibility="gone"
+            app:indicatorColor="@android:color/white" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/buttonCapture"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:minWidth="220dp"
+            android:text="@string/camera_capture" />
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

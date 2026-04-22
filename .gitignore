@@ -1,0 +1,27 @@
+# Android/Gradle
+.gradle/
+.gradle-user/
+build/
+app/build/
+
+# Local Android Studio and machine settings
+.android/
+.idea/
+*.iml
+local.properties
+
+# Generated artifacts
+*.apk
+*.ap_
+*.aab
+*.hprof
+captures/
+.externalNativeBuild/
+.cxx/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Local nested backup/copy folder from previous project structure
+Controle_Arla/

@@ -1,0 +1,19 @@
+<resources>
+    <style name="Theme.ArlaControle" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/brand_primary</item>
+        <item name="colorPrimaryVariant">@color/brand_primary_dark</item>
+        <item name="colorSecondary">@color/brand_secondary</item>
+        <item name="colorSecondaryVariant">@color/brand_secondary_dark</item>
+        <item name="colorSurface">@color/background_dark</item>
+        <item name="colorOnPrimary">@color/on_primary</item>
+        <item name="colorOnSecondary">@color/on_primary</item>
+        <item name="colorOnSurface">@color/text_primary_dark</item>
+        <item name="colorOnBackground">@color/text_primary_dark</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:navigationBarColor">@color/background_dark</item>
+        <item name="android:windowBackground">@color/background_dark</item>
+        <item name="android:colorBackground">@color/background_dark</item>
+        <item name="android:fontFamily">sans-serif</item>
+        <item name="fontFamily">sans-serif</item>
+    </style>
+</resources>

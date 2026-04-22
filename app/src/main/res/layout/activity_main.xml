@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/surface"
+            android:paddingStart="8dp"
+            android:paddingEnd="8dp"
+            app:subtitle="@string/app_toolbar_subtitle"
+            app:subtitleTextColor="@color/text_secondary"
+            app:title="@string/app_name"
+            app:titleTextColor="@color/text_primary"
+            app:titleTextAppearance="@style/TextAppearance.ArlaControle.Title" />
+
+        <FrameLayout
+            android:id="@+id/fragmentContainer"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:id="@+id/bottomNavigation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_bottom_nav"
+            app:itemIconTint="@color/bottom_nav_item_colors"
+            app:itemTextColor="@color/bottom_nav_item_colors"
+            app:labelVisibilityMode="labeled"
+            app:menu="@menu/bottom_nav_menu" />
+    </LinearLayout>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

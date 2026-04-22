@@ -1,0 +1,284 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardBackgroundColor="@color/surface"
+            app:cardCornerRadius="22dp"
+            app:strokeColor="@color/divider">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="20dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/indicators_title"
+                    android:textAppearance="@style/TextAppearance.ArlaControle.Title" />
+
+                <TextView
+                    android:id="@+id/textIndicatorsRisk"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:textColor="@color/brand_primary"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/financial_total_arla_period"
+                            android:textColor="@color/text_secondary"
+                            android:textSize="13sp" />
+
+                        <TextView
+                            android:id="@+id/textArlaMonthlyTotal"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="6dp"
+                            android:textColor="@color/text_primary"
+                            android:textSize="22sp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/financial_total_diesel_period"
+                            android:textColor="@color/text_secondary"
+                            android:textSize="13sp" />
+
+                        <TextView
+                            android:id="@+id/textDieselMonthlyTotal"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="6dp"
+                            android:textColor="@color/text_primary"
+                            android:textSize="22sp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/dashboard_events_month"
+                            android:textColor="@color/text_secondary"
+                            android:textSize="13sp" />
+
+                        <TextView
+                            android:id="@+id/textSafetyMonthlyTotal"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="6dp"
+                            android:textColor="@color/text_primary"
+                            android:textSize="22sp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/textEvidenceCoverage"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="14dp"
+                    android:textColor="@color/text_secondary"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:id="@+id/textResolutionRate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:textColor="@color/text_secondary"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:id="@+id/textIndicatorInsights"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:textColor="@color/text_secondary"
+                    android:textSize="14sp" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/buttonExportIndicators"
+                    style="@style/Widget.ArlaControle.Button.Outlined"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:text="@string/export_report_action"
+                    android:visibility="gone" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="@string/financial_vehicle_ranking"
+            android:textAppearance="@style/TextAppearance.ArlaControle.Title" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerDieselRanking"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:nestedScrollingEnabled="false" />
+
+        <TextView
+            android:id="@+id/textDieselRankingEmpty"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:background="@drawable/bg_surface_card"
+            android:gravity="center"
+            android:padding="24dp"
+            android:text="@string/ranking_empty"
+            android:textColor="@color/text_secondary"
+            android:visibility="gone" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="@string/financial_driver_ranking"
+            android:textAppearance="@style/TextAppearance.ArlaControle.Title" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerArlaRanking"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:nestedScrollingEnabled="false" />
+
+        <TextView
+            android:id="@+id/textArlaRankingEmpty"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:background="@drawable/bg_surface_card"
+            android:gravity="center"
+            android:padding="24dp"
+            android:text="@string/ranking_empty"
+            android:textColor="@color/text_secondary"
+            android:visibility="gone" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="@string/security_vehicle_ranking"
+            android:textAppearance="@style/TextAppearance.ArlaControle.Title" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerVehicleSafetyRanking"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:nestedScrollingEnabled="false" />
+
+        <TextView
+            android:id="@+id/textVehicleSafetyRankingEmpty"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:background="@drawable/bg_surface_card"
+            android:gravity="center"
+            android:padding="24dp"
+            android:text="@string/ranking_empty"
+            android:textColor="@color/text_secondary"
+            android:visibility="gone" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="@string/security_driver_ranking"
+            android:textAppearance="@style/TextAppearance.ArlaControle.Title" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerDriverSafetyRanking"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:nestedScrollingEnabled="false" />
+
+        <TextView
+            android:id="@+id/textDriverSafetyRankingEmpty"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:background="@drawable/bg_surface_card"
+            android:gravity="center"
+            android:padding="24dp"
+            android:text="@string/ranking_empty"
+            android:textColor="@color/text_secondary"
+            android:visibility="gone" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="@string/alerts_title"
+            android:textAppearance="@style/TextAppearance.ArlaControle.Title" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerIndicatorAlerts"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:nestedScrollingEnabled="false" />
+
+        <TextView
+            android:id="@+id/textIndicatorAlertsEmpty"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:background="@drawable/bg_surface_card"
+            android:gravity="center"
+            android:padding="24dp"
+            android:text="@string/list_empty_alerts"
+            android:textColor="@color/text_secondary"
+            android:visibility="gone" />
+    </LinearLayout>
+
+</androidx.core.widget.NestedScrollView>

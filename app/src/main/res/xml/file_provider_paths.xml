@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<paths>
+    <external-files-path
+        name="reports"
+        path="Documents/reports/" />
+    <external-files-path
+        name="refuel_evidence"
+        path="Pictures/refuel_evidence/" />
+    <external-files-path
+        name="calibration_pictures"
+        path="Pictures/calibration_media/" />
+    <external-files-path
+        name="calibration_videos"
+        path="Movies/calibration_media/" />
+    <cache-path
+        name="cache_reports"
+        path="reports/" />
+    <cache-path
+        name="cache_evidence"
+        path="refuel_evidence/" />
+    <cache-path
+        name="cache_calibration_media"
+        path="calibration_media/" />
+</paths>

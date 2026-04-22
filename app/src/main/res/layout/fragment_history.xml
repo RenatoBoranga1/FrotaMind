@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="20dp">
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardBackgroundColor="@color/surface"
+        app:cardCornerRadius="22dp"
+        app:strokeColor="@color/divider">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="18dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/filter_period"
+                    android:textAppearance="@style/TextAppearance.ArlaControle.Title" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/buttonExportHistory"
+                    style="@style/Widget.ArlaControle.Button.Outlined"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/export_report_action"
+                    android:visibility="gone" />
+            </LinearLayout>
+
+            <com.google.android.material.button.MaterialButtonToggleGroup
+                android:id="@+id/toggleFilterType"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                app:singleSelection="true">
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/buttonFilterAll"
+                    style="@style/Widget.ArlaControle.Button.Outlined"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/fuel_filter_all" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/buttonFilterArla"
+                    style="@style/Widget.ArlaControle.Button.Outlined"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/fuel_arla" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/buttonFilterDiesel"
+                    style="@style/Widget.ArlaControle.Button.Outlined"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/fuel_diesel" />
+            </com.google.android.material.button.MaterialButtonToggleGroup>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:orientation="horizontal">
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/buttonStartDate"
+                    style="@style/Widget.ArlaControle.Button.Outlined"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/history_start_date" />
+
+                <Space
+                    android:layout_width="12dp"
+                    android:layout_height="1dp" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/buttonEndDate"
+                    style="@style/Widget.ArlaControle.Button.Outlined"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/history_end_date" />
+            </LinearLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:hint="@string/filter_plate">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/inputFilterPlate"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textCapCharacters" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:hint="@string/filter_driver">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/inputFilterDriver"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textPersonName" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/buttonClearFilters"
+                style="@style/Widget.ArlaControle.Button.Outlined"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:text="@string/clear_filters" />
+        </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/swipeHistory"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="16dp"
+        android:layout_weight="1">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerHistory"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+            <TextView
+                android:id="@+id/textHistoryEmpty"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:background="@drawable/bg_surface_card"
+                android:gravity="center"
+                android:padding="24dp"
+                android:text="@string/history_empty"
+                android:textColor="@color/text_secondary"
+                android:visibility="gone" />
+        </FrameLayout>
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+</LinearLayout>

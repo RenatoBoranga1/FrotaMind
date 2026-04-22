@@ -1,0 +1,16 @@
+<svg width="720" height="220" viewBox="0 0 720 220" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M105 14L147.9 29.5C159.5 33.7 167 44.5 167 56.9V82.4C167 113.4 146.3 140.9 105 151.2C63.7 140.9 43 113.4 43 82.4V56.9C43 44.5 50.5 33.7 62.1 29.5L105 14Z" fill="#102A43"/>
+  <g stroke="#FFFFFF" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M64 85H116.5C120.6 85 124.2 82.8 126.1 79.2L131.5 69H145C150.5 69 155 73.5 155 79V99H147.2" stroke-width="6"/>
+    <path d="M75 69H111" stroke-width="4"/>
+    <path d="M82 78H106" stroke-width="4"/>
+    <path d="M89 87H103" stroke-width="4"/>
+    <path d="M59 99H68" stroke-width="6"/>
+  </g>
+  <circle cx="82" cy="111" r="12" fill="white"/>
+  <circle cx="134" cy="111" r="12" fill="white"/>
+  <circle cx="82" cy="111" r="5.2" fill="#102A43"/>
+  <circle cx="134" cy="111" r="5.2" fill="#102A43"/>
+  <text x="220" y="106" fill="#102A43" font-family="Sora, Space Grotesk, Montserrat, Arial, sans-serif" font-size="64" font-weight="700">FrotaMind</text>
+  <text x="224" y="144" fill="#5B6B7A" font-family="Manrope, Plus Jakarta Sans, Arial, sans-serif" font-size="24" font-weight="500">Versao monocromatica para ambientes tecnicos e documentacao</text>
+</svg>

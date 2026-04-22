@@ -1,0 +1,576 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    android:orientation="vertical">
+
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/background"
+        app:navigationIcon="@android:drawable/ic_media_previous"
+        app:title="@string/new_refuel" />
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="20dp">
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardBackgroundColor="@color/surface"
+                app:cardCornerRadius="22dp"
+                app:strokeColor="@color/divider">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="20dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/fuel_type"
+                        android:textColor="@color/text_secondary"
+                        android:textSize="13sp" />
+
+                    <com.google.android.material.button.MaterialButtonToggleGroup
+                        android:id="@+id/toggleFuelType"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        app:singleSelection="true">
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/buttonFuelArla"
+                            style="@style/Widget.ArlaControle.Button.Outlined"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="@string/fuel_arla" />
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/buttonFuelDiesel"
+                            style="@style/Widget.ArlaControle.Button.Outlined"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="@string/fuel_diesel" />
+                    </com.google.android.material.button.MaterialButtonToggleGroup>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        style="@style/Widget.ArlaControle.TextInputLayout.Dropdown"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="14dp"
+                        android:hint="@string/vehicle">
+
+                        <com.google.android.material.textfield.MaterialAutoCompleteTextView
+                            android:id="@+id/autoVehicle"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="none"
+                            android:paddingTop="2dp"
+                            android:paddingBottom="2dp"
+                            android:textColor="@color/text_primary"
+                            android:textSize="15sp" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <TextView
+                        android:id="@+id/textSelectedVehicleInfo"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:background="@drawable/bg_section_card"
+                        android:padding="14dp"
+                        android:textColor="@color/text_primary"
+                        android:textSize="13sp" />
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        style="@style/Widget.ArlaControle.TextInputLayout.Dropdown"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:hint="@string/driver">
+
+                        <com.google.android.material.textfield.MaterialAutoCompleteTextView
+                            android:id="@+id/autoDriver"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="none"
+                            android:paddingTop="2dp"
+                            android:paddingBottom="2dp"
+                            android:textColor="@color/text_primary"
+                            android:textSize="15sp" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/inputLayoutLiters"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:hint="@string/liters">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/inputLiters"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="numberDecimal" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/inputLayoutTotalAmount"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:hint="@string/total_amount"
+                        app:prefixText="R$ ">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/inputTotalAmount"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:clickable="false"
+                            android:cursorVisible="false"
+                            android:focusable="false"
+                            android:inputType="none"
+                            android:longClickable="false" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/inputLayoutPricePerLiter"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:hint="@string/input_price_per_liter"
+                        app:prefixText="R$ ">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/inputPricePerLiter"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="numberDecimal" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/cardFuelCostSummary"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        app:cardBackgroundColor="@color/background"
+                        app:cardCornerRadius="18dp"
+                        app:strokeColor="@color/divider">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:padding="16dp">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/fuel_cost_summary_title"
+                                android:textAppearance="@style/TextAppearance.ArlaControle.Title" />
+
+                            <TextView
+                                android:id="@+id/textFuelCostSuggestion"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="8dp"
+                                android:textColor="@color/text_secondary"
+                                android:textSize="13sp" />
+
+                            <TextView
+                                android:id="@+id/textFuelCostPerKm"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="8dp"
+                                android:textColor="@color/text_primary"
+                                android:textSize="15sp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/textFuelCostValidation"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="6dp"
+                                android:textColor="@color/text_secondary"
+                                android:textSize="13sp" />
+                        </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/cardOdometerSource"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:visibility="gone"
+                        app:cardBackgroundColor="@color/background"
+                        app:cardCornerRadius="18dp"
+                        app:strokeColor="@color/divider">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:padding="16dp">
+
+                            <TextView
+                                android:id="@+id/textOdometerSourceTitle"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textAppearance="@style/TextAppearance.ArlaControle.Title" />
+
+                            <TextView
+                                android:id="@+id/textOdometerSourceSubtitle"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="8dp"
+                                android:textColor="@color/text_secondary"
+                                android:textSize="14sp" />
+                        </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/inputLayoutOdometerInitial"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:hint="@string/refuel_odometer_initial">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/inputOdometerInitial"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="number" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/inputLayoutOdometerFinal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:hint="@string/refuel_odometer_final">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/inputOdometerFinal"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="number" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <TextView
+                        android:id="@+id/textOdometerValidation"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:textColor="@color/text_secondary"
+                        android:textSize="13sp"
+                        android:visibility="gone" />
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/cardArlaCalculatedControl"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        app:cardBackgroundColor="@color/info_container"
+                        app:cardCornerRadius="18dp"
+                        app:strokeColor="@color/divider">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:padding="16dp">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/refuel_arla_control_title"
+                                android:textColor="@color/text_secondary"
+                                android:textSize="13sp" />
+
+                            <TextView
+                                android:id="@+id/textArlaCalculatedControl"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="8dp"
+                                android:text="@string/refuel_arla_control_empty"
+                                android:textColor="@color/brand_primary"
+                                android:textSize="24sp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/textArlaCalculatedControlHint"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="6dp"
+                                android:text="@string/refuel_arla_control_hint"
+                                android:textColor="@color/text_secondary"
+                                android:textSize="13sp" />
+                        </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/inputLayoutDateTime"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:hint="@string/date_time">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/inputDateTime"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:clickable="true"
+                            android:focusable="false"
+                            android:inputType="none" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/inputLayoutLocation"
+                        style="@style/Widget.ArlaControle.TextInputLayout.Dropdown"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:hint="@string/location">
+
+                        <com.google.android.material.textfield.MaterialAutoCompleteTextView
+                            android:id="@+id/inputLocation"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="none"
+                            android:paddingTop="2dp"
+                            android:paddingBottom="2dp"
+                            android:textColor="@color/text_primary"
+                            android:textSize="15sp" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        app:cardBackgroundColor="@color/background"
+                        app:cardCornerRadius="18dp"
+                        app:strokeColor="@color/divider">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:padding="16dp">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/evidence_title"
+                                android:textAppearance="@style/TextAppearance.ArlaControle.Title" />
+
+                            <TextView
+                                android:id="@+id/textEvidenceInstruction"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="8dp"
+                                android:textColor="@color/text_secondary"
+                                android:textSize="14sp" />
+
+                            <TextView
+                                android:id="@+id/textEvidenceStatus"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="10dp"
+                                android:textColor="@color/text_secondary"
+                                android:textSize="13sp" />
+
+                            <com.google.android.material.imageview.ShapeableImageView
+                                android:id="@+id/imageEvidencePreview"
+                                android:layout_width="match_parent"
+                                android:layout_height="220dp"
+                                android:layout_marginTop="12dp"
+                                android:contentDescription="@string/evidence_preview"
+                                android:scaleType="centerCrop"
+                                android:visibility="gone"
+                                app:shapeAppearanceOverlay="@style/ShapeAppearance.Material3.MediumComponent" />
+
+                            <com.google.android.material.button.MaterialButton
+                                android:id="@+id/buttonCaptureEvidence"
+                                style="@style/Widget.ArlaControle.Button.Outlined"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="12dp" />
+                        </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/cardExtractionResult"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:visibility="gone"
+                        app:cardBackgroundColor="@color/background"
+                        app:cardCornerRadius="18dp"
+                        app:strokeColor="@color/divider">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:padding="16dp">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/extraction_title"
+                                android:textAppearance="@style/TextAppearance.ArlaControle.Title" />
+
+                            <LinearLayout
+                                android:id="@+id/layoutExtractionLoading"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="10dp"
+                                android:gravity="center_vertical"
+                                android:orientation="horizontal"
+                                android:visibility="gone">
+
+                                <com.google.android.material.progressindicator.CircularProgressIndicator
+                                    android:id="@+id/progressExtraction"
+                                    android:layout_width="24dp"
+                                    android:layout_height="24dp" />
+
+                                <TextView
+                                    android:id="@+id/textExtractionLoading"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="10dp"
+                                    android:text="@string/extraction_processing"
+                                    android:textColor="@color/text_secondary"
+                                    android:textSize="14sp" />
+                            </LinearLayout>
+
+                            <com.google.android.material.chip.Chip
+                                android:id="@+id/chipExtractionStatus"
+                                style="@style/Widget.ArlaControle.Chip"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="12dp"
+                                android:visibility="gone"
+                                app:chipBackgroundColor="@color/info_container" />
+
+                            <TextView
+                                android:id="@+id/textExtractionSummary"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="10dp"
+                                android:textColor="@color/text_primary"
+                                android:textSize="14sp" />
+
+                            <TextView
+                                android:id="@+id/textExtractionFields"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="8dp"
+                                android:textColor="@color/text_secondary"
+                                android:textSize="13sp" />
+                        </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        app:cardBackgroundColor="@color/background"
+                        app:cardCornerRadius="18dp"
+                        app:strokeColor="@color/divider">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:padding="16dp">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/checklist_title"
+                                android:textAppearance="@style/TextAppearance.ArlaControle.Title" />
+
+                            <TextView
+                                android:id="@+id/textChecklistInstruction"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="8dp"
+                                android:textColor="@color/text_secondary"
+                                android:textSize="14sp" />
+
+                            <LinearLayout
+                                android:id="@+id/layoutChecklistItems"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="12dp"
+                                android:orientation="vertical" />
+
+                            <TextView
+                                android:id="@+id/textChecklistTimestamp"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="10dp"
+                                android:textColor="@color/text_secondary"
+                                android:textSize="13sp" />
+                        </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:hint="@string/notes">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/inputNotes"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="top"
+                            android:inputType="textMultiLine"
+                            android:minLines="3" />
+                    </com.google.android.material.textfield.TextInputLayout>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:padding="20dp">
+
+        <com.google.android.material.progressindicator.CircularProgressIndicator
+            android:id="@+id/progressSave"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginEnd="12dp"
+            android:visibility="gone" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/buttonSaveRefuel"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/save" />
+    </LinearLayout>
+
+</LinearLayout>

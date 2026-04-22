@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    android:orientation="vertical">
+
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/background"
+        app:navigationIcon="@android:drawable/ic_media_previous"
+        app:title="@string/calibration_title" />
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="20dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_dashboard_header"
+                android:orientation="vertical"
+                android:padding="24dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/calibration_title"
+                    android:textColor="@color/on_primary"
+                    android:textSize="24sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="@string/calibration_subtitle"
+                    android:textColor="@color/on_primary"
+                    android:textSize="14sp" />
+            </LinearLayout>
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="18dp"
+                app:cardBackgroundColor="@color/surface"
+                app:cardCornerRadius="22dp"
+                app:strokeColor="@color/divider">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="20dp">
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        style="@style/Widget.ArlaControle.TextInputLayout.Dropdown"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/calibration_responsible">
+
+                        <com.google.android.material.textfield.MaterialAutoCompleteTextView
+                            android:id="@+id/autoCalibrationResponsible"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="none" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:hint="@string/calibration_date">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/inputCalibrationDate"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:focusable="false"
+                            android:inputType="none" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/inputLayoutCalibrationOdometer"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:hint="@string/calibration_odometer">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/inputCalibrationOdometer"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="number" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        app:cardBackgroundColor="@color/background"
+                        app:cardCornerRadius="18dp"
+                        app:strokeColor="@color/divider">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:padding="16dp">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/calibration_media_title"
+                                android:textAppearance="@style/TextAppearance.ArlaControle.Title" />
+
+                            <TextView
+                                android:id="@+id/textCalibrationPhotoCount"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="10dp"
+                                android:textColor="@color/text_secondary"
+                                android:textSize="14sp" />
+
+                            <TextView
+                                android:id="@+id/textCalibrationVideoCount"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="4dp"
+                                android:textColor="@color/text_secondary"
+                                android:textSize="14sp" />
+
+                            <com.google.android.material.imageview.ShapeableImageView
+                                android:id="@+id/imageCalibrationPreview"
+                                android:layout_width="match_parent"
+                                android:layout_height="220dp"
+                                android:layout_marginTop="12dp"
+                                android:scaleType="centerCrop"
+                                android:visibility="gone"
+                                app:shapeAppearanceOverlay="@style/ShapeAppearance.Material3.MediumComponent" />
+
+                            <com.google.android.material.button.MaterialButton
+                                android:id="@+id/buttonAddCalibrationPhoto"
+                                style="@style/Widget.ArlaControle.Button.Outlined"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="12dp"
+                                android:text="@string/calibration_add_photo" />
+
+                            <com.google.android.material.button.MaterialButton
+                                android:id="@+id/buttonAddCalibrationVideo"
+                                style="@style/Widget.ArlaControle.Button.Outlined"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="12dp"
+                                android:text="@string/calibration_add_video" />
+                        </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:hint="@string/notes">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/inputCalibrationNotes"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="top"
+                            android:inputType="textMultiLine"
+                            android:minLines="3" />
+                    </com.google.android.material.textfield.TextInputLayout>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:padding="20dp">
+
+        <com.google.android.material.progressindicator.CircularProgressIndicator
+            android:id="@+id/progressSaveCalibration"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginEnd="12dp"
+            android:visibility="gone" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/buttonSaveCalibration"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/calibration_save" />
+    </LinearLayout>
+
+</LinearLayout>

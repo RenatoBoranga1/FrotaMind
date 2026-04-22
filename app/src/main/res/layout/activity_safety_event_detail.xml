@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    android:orientation="vertical">
+
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/background"
+        app:navigationIcon="@android:drawable/ic_media_previous"
+        app:title="@string/safety_detail_title" />
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="20dp">
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardBackgroundColor="@color/surface"
+                app:cardCornerRadius="22dp"
+                app:strokeColor="@color/divider">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="20dp">
+
+                    <TextView
+                        android:id="@+id/textSafetyDetailSummary"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/text_primary"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:orientation="horizontal">
+
+                        <com.google.android.material.chip.Chip
+                            android:id="@+id/chipSafetyDetailType"
+                            style="@style/Widget.ArlaControle.Chip"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="8dp"
+                            app:chipBackgroundColor="@color/info_container" />
+
+                        <com.google.android.material.chip.Chip
+                            android:id="@+id/chipSafetyDetailSeverity"
+                            style="@style/Widget.ArlaControle.Chip"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="8dp"
+                            app:chipBackgroundColor="@color/danger_container" />
+
+                        <com.google.android.material.chip.Chip
+                            android:id="@+id/chipSafetyDetailStatus"
+                            style="@style/Widget.ArlaControle.Chip"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            app:chipBackgroundColor="@color/warning_container" />
+                    </LinearLayout>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <TextView
+                android:id="@+id/textSafetyDetailMeta"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:textColor="@color/text_secondary"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/textSafetyDetailDescription"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="18dp"
+                android:textColor="@color/text_primary"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/textSafetyDetailCause"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="14dp"
+                android:textColor="@color/text_secondary"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/textSafetyDetailNotes"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:textColor="@color/text_secondary"
+                android:textSize="14sp" />
+
+            <ImageView
+                android:id="@+id/imageSafetyDetail"
+                android:layout_width="match_parent"
+                android:layout_height="220dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/bg_section_card"
+                android:scaleType="centerCrop" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/buttonOpenSafetyEvidence"
+                style="@style/Widget.ArlaControle.Button.Outlined"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="14dp"
+                android:text="@string/evidence_open" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/buttonResolveSafetyEvent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="14dp"
+                android:text="@string/safety_mark_resolved" />
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+</LinearLayout>

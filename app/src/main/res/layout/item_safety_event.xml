@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="12dp"
+    app:cardBackgroundColor="@color/surface"
+    app:cardCornerRadius="20dp"
+    app:strokeColor="@color/divider">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="18dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/textSafetyTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/text_primary"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/textSafetySubtitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:textColor="@color/text_secondary"
+                    android:textSize="13sp" />
+            </LinearLayout>
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chipSafetySeverity"
+                style="@style/Widget.ArlaControle.Chip"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:chipBackgroundColor="@color/danger_container" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/textSafetyDescription"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:maxLines="3"
+            android:textColor="@color/text_primary"
+            android:textSize="14sp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="14dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chipSafetyType"
+                style="@style/Widget.ArlaControle.Chip"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                app:chipBackgroundColor="@color/info_container" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chipSafetyStatus"
+                style="@style/Widget.ArlaControle.Chip"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                app:chipBackgroundColor="@color/warning_container" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chipSafetyEvidence"
+                style="@style/Widget.ArlaControle.Chip"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:text="@string/evidence_short"
+                android:visibility="gone"
+                app:chipBackgroundColor="@color/success_container" />
+
+            <TextView
+                android:id="@+id/textSafetyDate"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="end"
+                android:textColor="@color/text_secondary"
+                android:textSize="12sp" />
+        </LinearLayout>
+    </LinearLayout>
+
+</com.google.android.material.card.MaterialCardView>

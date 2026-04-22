@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    android:orientation="vertical">
+
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/background"
+        app:navigationIcon="@android:drawable/ic_media_previous"
+        app:title="@string/refuel_detail" />
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="20dp">
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardBackgroundColor="@color/surface"
+                app:cardCornerRadius="22dp"
+                app:strokeColor="@color/divider">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="20dp">
+
+                    <TextView
+                        android:id="@+id/textDetailPlate"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/text_primary"
+                        android:textSize="24sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/textDetailFleet"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="6dp"
+                        android:textColor="@color/text_secondary" />
+
+                    <TextView
+                        android:id="@+id/textDetailFuelType"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="6dp"
+                        android:textColor="@color/text_secondary" />
+
+                    <TextView
+                        android:id="@+id/textDetailDriver"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:textColor="@color/text_primary" />
+
+                    <TextView
+                        android:id="@+id/textDetailLiters"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:textColor="@color/brand_primary"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/textDetailTotalAmount"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="6dp"
+                        android:textColor="@color/text_primary"
+                        android:visibility="gone" />
+
+                    <TextView
+                        android:id="@+id/textDetailOdometer"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:textColor="@color/text_primary" />
+
+                    <TextView
+                        android:id="@+id/textDetailDate"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:textColor="@color/text_primary" />
+
+                    <TextView
+                        android:id="@+id/textDetailLocation"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:textColor="@color/text_primary" />
+
+                    <TextView
+                        android:id="@+id/textDetailNotes"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:textColor="@color/text_secondary" />
+
+                    <TextView
+                        android:id="@+id/textDetailStatus"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="14dp"
+                        android:textColor="@color/text_primary"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/textDetailReason"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="6dp"
+                        android:textColor="@color/text_secondary" />
+
+                    <TextView
+                        android:id="@+id/textDetailSync"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="6dp"
+                        android:textColor="@color/text_secondary" />
+
+                    <TextView
+                        android:id="@+id/textDetailEntryMode"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="6dp"
+                        android:textColor="@color/text_secondary" />
+
+                    <TextView
+                        android:id="@+id/textDetailExtractionStatus"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="6dp"
+                        android:textColor="@color/text_secondary" />
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/cardEvidence"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="18dp"
+                        android:visibility="gone"
+                        app:cardBackgroundColor="@color/background"
+                        app:cardCornerRadius="18dp"
+                        app:strokeColor="@color/divider">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:padding="16dp">
+
+                            <TextView
+                                android:id="@+id/textEvidenceTitle"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textAppearance="@style/TextAppearance.ArlaControle.Title" />
+
+                            <com.google.android.material.imageview.ShapeableImageView
+                                android:id="@+id/imageEvidenceDetail"
+                                android:layout_width="match_parent"
+                                android:layout_height="220dp"
+                                android:layout_marginTop="12dp"
+                                android:contentDescription="@string/evidence_preview"
+                                android:scaleType="centerCrop"
+                                app:shapeAppearanceOverlay="@style/ShapeAppearance.Material3.MediumComponent" />
+
+                            <com.google.android.material.button.MaterialButton
+                                android:id="@+id/buttonOpenEvidence"
+                                style="@style/Widget.ArlaControle.Button.Outlined"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="12dp"
+                                android:text="@string/evidence_open" />
+                        </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/cardChecklist"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:visibility="gone"
+                        app:cardBackgroundColor="@color/background"
+                        app:cardCornerRadius="18dp"
+                        app:strokeColor="@color/divider">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:padding="16dp">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/checklist_title_detail"
+                                android:textAppearance="@style/TextAppearance.ArlaControle.Title" />
+
+                            <TextView
+                                android:id="@+id/textChecklistCompletedAt"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="8dp"
+                                android:textColor="@color/text_secondary"
+                                android:textSize="13sp" />
+
+                            <LinearLayout
+                                android:id="@+id/layoutChecklistDetailItems"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="12dp"
+                                android:orientation="vertical" />
+                        </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+</LinearLayout>

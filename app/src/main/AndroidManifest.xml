@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+
+    <application
+        android:name=".ArlaControleApplication"
+        android:allowBackup="true"
+        android:icon="@drawable/ic_frotamind_mark"
+        android:label="@string/app_name"
+        android:networkSecurityConfig="@xml/network_security_config"
+        android:roundIcon="@drawable/ic_frotamind_mark"
+        android:usesCleartextTraffic="true"
+        android:theme="@style/Theme.ArlaControle">
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_provider_paths" />
+        </provider>
+        <activity
+            android:name=".ui.auth.LoginActivity"
+            android:exported="false"
+            android:theme="@style/Theme.ArlaControle" />
+        <activity
+            android:name=".ui.abastecimento.NewRefuelActivity"
+            android:exported="false"
+            android:theme="@style/Theme.ArlaControle" />
+        <activity
+            android:name=".ui.seguranca.NewSafetyEventActivity"
+            android:exported="false"
+            android:theme="@style/Theme.ArlaControle" />
+        <activity
+            android:name=".ui.seguranca.SafetySpreadsheetImportActivity"
+            android:exported="false"
+            android:theme="@style/Theme.ArlaControle" />
+        <activity
+            android:name=".ui.seguranca.SafetyEventDetailActivity"
+            android:exported="false"
+            android:theme="@style/Theme.ArlaControle" />
+        <activity
+            android:name=".ui.afericao.NewCalibrationActivity"
+            android:exported="false"
+            android:theme="@style/Theme.ArlaControle" />
+        <activity
+            android:name=".ui.afericao.CalibrationDetailActivity"
+            android:exported="false"
+            android:theme="@style/Theme.ArlaControle" />
+        <activity
+            android:name=".ui.camera.CameraCaptureActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.ArlaControle" />
+        <activity
+            android:name=".ui.veiculos.VehicleListActivity"
+            android:exported="false"
+            android:theme="@style/Theme.ArlaControle" />
+        <activity
+            android:name=".ui.veiculos.VehicleDetailActivity"
+            android:exported="false"
+            android:theme="@style/Theme.ArlaControle" />
+        <activity
+            android:name=".ui.motoristas.DriverListActivity"
+            android:exported="false"
+            android:theme="@style/Theme.ArlaControle" />
+        <activity
+            android:name=".ui.alertas.AlertListActivity"
+            android:exported="false"
+            android:theme="@style/Theme.ArlaControle" />
+        <activity
+            android:name=".ui.historico.RefuelDetailActivity"
+            android:exported="false"
+            android:theme="@style/Theme.ArlaControle" />
+        <activity
+            android:name=".ui.configuracoes.SettingsActivity"
+            android:exported="false"
+            android:theme="@style/Theme.ArlaControle" />
+        <activity
+            android:name=".ui.management.ManagementHelpActivity"
+            android:exported="false"
+            android:theme="@style/Theme.ArlaControle" />
+        <activity
+            android:name=".ui.main.MainActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>

@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/export_title"
+            android:textAppearance="@style/TextAppearance.ArlaControle.Title" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:text="@string/export_subtitle"
+            android:textColor="@color/text_secondary"
+            android:textSize="14sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="18dp"
+            android:text="@string/export_format"
+            android:textAppearance="@style/TextAppearance.ArlaControle.Title" />
+
+        <com.google.android.material.button.MaterialButtonToggleGroup
+            android:id="@+id/toggleExportFormat"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            app:singleSelection="true">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/buttonExportFormatPdf"
+                style="@style/Widget.ArlaControle.Button.Outlined"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/export_format_pdf" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/buttonExportFormatXlsx"
+                style="@style/Widget.ArlaControle.Button.Outlined"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/export_format_excel" />
+        </com.google.android.material.button.MaterialButtonToggleGroup>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="18dp"
+            android:text="@string/fuel_type"
+            android:textAppearance="@style/TextAppearance.ArlaControle.Title" />
+
+        <com.google.android.material.button.MaterialButtonToggleGroup
+            android:id="@+id/toggleExportFuel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            app:singleSelection="true">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/buttonExportFuelAll"
+                style="@style/Widget.ArlaControle.Button.Outlined"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/fuel_filter_all" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/buttonExportFuelArla"
+                style="@style/Widget.ArlaControle.Button.Outlined"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/fuel_arla" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/buttonExportFuelDiesel"
+                style="@style/Widget.ArlaControle.Button.Outlined"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/fuel_diesel" />
+        </com.google.android.material.button.MaterialButtonToggleGroup>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:orientation="horizontal">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/buttonExportStartDate"
+                style="@style/Widget.ArlaControle.Button.Outlined"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/select_date" />
+
+            <Space
+                android:layout_width="12dp"
+                android:layout_height="1dp" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/buttonExportEndDate"
+                style="@style/Widget.ArlaControle.Button.Outlined"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/select_date" />
+        </LinearLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:hint="@string/vehicle">
+
+            <com.google.android.material.textfield.MaterialAutoCompleteTextView
+                android:id="@+id/inputExportVehicle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:hint="@string/driver">
+
+            <com.google.android.material.textfield.MaterialAutoCompleteTextView
+                android:id="@+id/inputExportDriver"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="18dp"
+            android:text="@string/current_status"
+            android:textAppearance="@style/TextAppearance.ArlaControle.Title" />
+
+        <com.google.android.material.button.MaterialButtonToggleGroup
+            android:id="@+id/toggleExportStatus"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            app:singleSelection="true">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/buttonExportStatusAll"
+                style="@style/Widget.ArlaControle.Button.Outlined"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/fuel_filter_all" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/buttonExportStatusNormal"
+                style="@style/Widget.ArlaControle.Button.Outlined"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/status_normal" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/buttonExportStatusAttention"
+                style="@style/Widget.ArlaControle.Button.Outlined"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/status_attention" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/buttonExportStatusAlert"
+                style="@style/Widget.ArlaControle.Button.Outlined"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/status_alert" />
+        </com.google.android.material.button.MaterialButtonToggleGroup>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="18dp"
+            android:text="@string/sync_status"
+            android:textAppearance="@style/TextAppearance.ArlaControle.Title" />
+
+        <com.google.android.material.button.MaterialButtonToggleGroup
+            android:id="@+id/toggleExportSync"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            app:singleSelection="true">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/buttonExportSyncAll"
+                style="@style/Widget.ArlaControle.Button.Outlined"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/fuel_filter_all" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/buttonExportSyncSynced"
+                style="@style/Widget.ArlaControle.Button.Outlined"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/export_synced_only" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/buttonExportSyncPending"
+                style="@style/Widget.ArlaControle.Button.Outlined"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/export_pending_only" />
+        </com.google.android.material.button.MaterialButtonToggleGroup>
+
+        <com.google.android.material.progressindicator.LinearProgressIndicator
+            android:id="@+id/progressExport"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="18dp"
+            android:indeterminate="true"
+            android:visibility="gone" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/buttonGenerateExport"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="18dp"
+            android:text="@string/export_generate" />
+    </LinearLayout>
+
+</androidx.core.widget.NestedScrollView>
